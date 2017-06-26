@@ -1,0 +1,16 @@
+### System config
+
+# ip, cname, or machine name
+CONFIG_SYSTEM_MACHINE=""
+# main drive to inspect
+CONFIG_SYSTEM_DRIVE=""
+# home folder to inspect
+CONFIG_SYSTEM_HOME_DIR="/home"
+
+### Curl config
+
+# xapi lrs main endpoint without trailing slash and "statements" route, example "http://my-lrs.com/xapi"
+CONFIG_LRS_ENDPOINT="http://lxhive.bo"
+# http basic auth username and password (lRS minimum permission "statements/write")
+CONFIG_LRS_AUTH_USER="UTJhf7FkFojCRpQ3LKBcJGPYecOFfgofuUbVjsEn"
+CONFIG_LRS_AUTH_PASS="WUythpZ0kejduk6f3TFBaaCa1vgSFGe8e4SMNGhy"
