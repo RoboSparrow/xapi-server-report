@@ -16,31 +16,6 @@
 source $(dirname $0)/config
 
 ##
-# Editable configuration
-##
-
-### xAPI statement config
-
-# statement.actor name (human readable)
-CONFIG_XAPI_ACTOR_NAME="${CONFIG_SYSTEM_MACHINE}"
-# statement.actor email
-CONFIG_XAPI_ACTOR_EMAIL="${CONFIG_SYSTEM_MACHINE}@server-check.test"
-
-# statement.verb.display name (human readable)
-CONFIG_XAPI_VERB_NAME="reported"
-# statement.verb.id (valid IRI)
-CONFIG_XAPI_VERB_IRI="${CONFIG_LRS_ENDPOINT}/taxonomy/verbs/reported"
-
-# statement.object.definition activity name (human readable)
-CONFIG_XAPI_ACTIVITY_NAME="server check"
-# statement.object.id (valid IRI)
-CONFIG_XAPI_ACTIVITY_IRI="${CONFIG_LRS_ENDPOINT}/taxonomy/activities/server-check"
-
-# statement.result.extensions extension id (valid IRI)
-# Our the server check results are stored in statement.result.extensions[id]
-CONFIG_XAPI_EXTENSION_IRI="${CONFIG_LRS_ENDPOINT}/profiles/server-check/extensions/result/stats"
-
-##
 # disk space
 # https://linux.die.net/man/1/du
 # arg $1 source
