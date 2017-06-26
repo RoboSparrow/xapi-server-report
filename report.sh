@@ -187,12 +187,13 @@ JSON_STATEMENT="{
 # echo "$JSON_STATEMENT"
 # exit
 
-# send
-
-curl -i \
+STATUS=$(curl -s -w "status: %{http_code}, " \
 -H "Accept: application/json" \
 -H "Content-Type:application/json" \
 -H "X-Experience-API-Version:1.0.1" \
 --data "${JSON_STATEMENT}" \
 -u "${CONFIG_LRS_AUTH_USER}:${CONFIG_LRS_AUTH_PASS}" \
--X POST "${CONFIG_LRS_ENDPOINT}/statements"
+-X POST "${CONFIG_LRS_ENDPOINT}/statements"; echo "exit code: $?")
+
+echo $STATUS
+logger "xapi-server-report: ${STATUS}"

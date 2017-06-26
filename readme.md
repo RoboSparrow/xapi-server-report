@@ -49,53 +49,7 @@ See a complete statement example below
 
 **1) System and LRS connection**
 
-Copy `config.template` to `config` and fill in the values.
-
-```bash
-### System config
-
-# ip, cname, or machine name
-CONFIG_SYSTEM_MACHINE="<name,ip-address,c-name>"
-# main drive to inspect
-CONFIG_SYSTEM_DRIVE="/dev/sda1"
-# home folder to inspect
-CONFIG_SYSTEM_HOME_DIR="/home"
-
-### Curl config
-
-# xapi lrs main endpoint without trailing slash and "statements" route, example "http://my-lrs.com/xapi"
-CONFIG_LRS_ENDPOINT="<lrs main endpoint>"
-# http basic auth username and password (lRS minimum permission "statements/write")
-CONFIG_LRS_AUTH_USER="<user>"
-CONFIG_LRS_AUTH_PASS="<pass>"
-```
-
-**2) xAPI statement configuration**
-
-You find xAPI statemment variables on top of the `report.sh`
-
-```bash
-### xAPI statement config
-
-# statement.actor name (human readable)
-CONFIG_XAPI_ACTOR_NAME="${CONFIG_SYSTEM_MACHINE}"
-# statement.actor email
-CONFIG_XAPI_ACTOR_EMAIL="${CONFIG_SYSTEM_MACHINE}@server-check.test"
-
-# statement.verb.display name (human readable)
-CONFIG_XAPI_VERB_NAME="reported"
-# statement.verb.id (valid IRI)
-CONFIG_XAPI_VERB_IRI="${CONFIG_LRS_ENDPOINT}/taxonomy/verbs/reported"
-
-# statement.object.definition activity name (human readable)
-CONFIG_XAPI_ACTIVITY_NAME="server check"
-# statement.object.id (valid IRI)
-CONFIG_XAPI_ACTIVITY_IRI="${CONFIG_LRS_ENDPOINT}/taxonomy/activities/server-check"
-
-# statement.result.extensions extension id (valid IRI)
-# Our the server check results are stored in statement.result.extensions[id]
-CONFIG_XAPI_EXTENSION_IRI="${CONFIG_LRS_ENDPOINT}/profiles/server-check/extensions/result/stats"
-```
+Copy `config.template` to `config` and fill in the values. See comments in file for help.
 
 ## Usage
 
@@ -113,9 +67,15 @@ Note: Bourne shell mode will fail, i.e `sh ./xapi-server-report.sh` due to the f
 
 ```bash
 sudo crontab -e
+
 ...
-#will run the report every 10 minutes
+
+# disable/set cron mail target
+MAILTO=""
+# will run the report every 10 minutes
 */10 * * * * /<path-to-script>/report.sh
+
+...
 ```
 
 ## Complete example statement
