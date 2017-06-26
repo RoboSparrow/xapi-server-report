@@ -3,7 +3,8 @@
 ##
 #
 # Install:
-#    make file executable
+#    make this file executable
+#    copy `config.template` to `config` and edit values
 # Usage
 #   `./xapi-server-report.sh`
 #   Do not use bourne shell, i.e `sh ./xapi-server-report.sh`, it will likely throw "bad variable errors" due to function syntax
