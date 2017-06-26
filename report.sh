@@ -10,7 +10,10 @@
 #
 ##
 
-source config
+##
+# load configuration
+##
+source $(dirname $0)/config
 
 ##
 # Editable configuration
