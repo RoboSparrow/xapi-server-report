@@ -49,7 +49,8 @@ See a complete statement example below
 
 **1) System and LRS connection**
 
-Copy `config.template` to `config` and fill in the values. See comments in file for help.
+1. Copy `config.template` to `config` and fill in the values. See comments in file for help.
+2. make `report.sh` executable and add it to your root cron (see example)
 
 ## Usage
 
