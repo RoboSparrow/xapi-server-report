@@ -1,4 +1,4 @@
-# xAPI server report
+# xAPI server report (bash)
 
 Example shell script for sending Linux server info to an xAPI LRS. This is just an experiment using [xAPI](https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-About.md#partone) and bash.
 
