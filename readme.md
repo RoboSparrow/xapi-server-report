@@ -1,9 +1,9 @@
 # xAPI server report (bash)
 
-Example shell script for sending Linux server info to an xAPI LRS. This is just an experiment using [xAPI](https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-About.md#partone) and bash.
+Example shell script for sending Linux server info to an xAPI LRS. This is just an experiment with [Experience API](https://github.com/adlnet/xAPI-Spec/blob/master/xAPI-About.md#partone) and Bash.
 
- * Configure and add it to (root) cron
-
+ * Copy `config.template` to `config` and edit values (see comments)
+ * Add `report.sh` to (root) cron
 
 The scripts sends a small report as an xAPI statement to an LRS
 
