@@ -39,5 +39,5 @@ CONFIG_XAPI_ACTIVITY_NAME="server check"
 CONFIG_XAPI_ACTIVITY_IRI="${CONFIG_LRS_ENDPOINT}/taxonomy/activities/server-check"
 
 # statement.result.extensions extension id (valid IRI)
-# Our the server check results are stored in statement.result.extensions[id]
+# check results are stored in statement.result.extensions[id]
 CONFIG_XAPI_EXTENSION_IRI="${CONFIG_LRS_ENDPOINT}/profiles/server-check/extensions/result/stats"
