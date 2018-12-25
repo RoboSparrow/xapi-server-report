@@ -54,7 +54,7 @@ See a complete statement example below
 
 ## Usage
 
-It is highly recommended to run this script with root permissions in order to avoid file permission issues
+It is highly recommended to run this script with root permissions to avoid file permission issues
 
 ```bash
 sudo ./report.sh
