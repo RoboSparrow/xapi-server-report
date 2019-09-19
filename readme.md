@@ -12,7 +12,7 @@ The scripts sends a small report as an xAPI statement to an LRS
  * memory usage
  * cpu usage
 
-The report is stored as an xapi result extension within `statement.result` property
+The report is stored as an xapi result extension within `statement.result` property.
 
 ```javascript
 //...
