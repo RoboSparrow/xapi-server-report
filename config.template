@@ -18,6 +18,8 @@ CONFIG_LRS_ENDPOINT=""
 # http basic auth username and password (lRS minimum permission "statements/write")
 CONFIG_LRS_AUTH_USER=""
 CONFIG_LRS_AUTH_PASS=""
+# supported xapi version (>=1.0.1)
+CONFIG_LRS_XAPI_VERSION="1.0.3"
 
 ##
 # xAPI statement configuration
