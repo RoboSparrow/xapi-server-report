@@ -14,7 +14,8 @@
 ##
 # load configuration
 ##
-source $(dirname $0)/config
+
+source "$(dirname "${0}")/config"
 
 ##
 # disk space
@@ -112,8 +113,8 @@ START_TIME=$(($(date +%s%N)/1000000))
 
 # build json
 
-JSON_DRIVE=$(dfcmd $CONFIG_SYSTEM_DRIVE)
-JSON_DIR=$(ducmd $CONFIG_SYSTEM_HOME_DIR 1)
+JSON_DRIVE=$(dfcmd "${CONFIG_SYSTEM_DRIVE}")
+JSON_DIR=$(ducmd "${CONFIG_SYSTEM_HOME_DIR}" 1)
 JSON_MEMORY=$(freecmd)
 JSON_CPU=$(topcmd)
 
@@ -166,13 +167,13 @@ JSON_STATEMENT="{
 # echo "$JSON_STATEMENT"
 # exit
 
-STATUS=$(curl -s -w "status: %{http_code}, " \
+STATUS=$(curl -s -w " status: %{http_code}, " \
 -H "Accept: application/json" \
 -H "Content-Type:application/json" \
--H "X-Experience-API-Version:1.0.1" \
+-H "X-Experience-API-Version:${CONFIG_LRS_XAPI_VERSION}" \
 --data "${JSON_STATEMENT}" \
 -u "${CONFIG_LRS_AUTH_USER}:${CONFIG_LRS_AUTH_PASS}" \
--X POST "${CONFIG_LRS_ENDPOINT}/statements"; echo "exit code: $?")
+-X POST "${CONFIG_LRS_ENDPOINT}/statements"; echo "exit code: ${?}")
 
-echo $STATUS
+echo "${STATUS}"
 logger "xapi-server-report: ${STATUS}"
